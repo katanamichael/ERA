@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+6wqzq-o4bp_wzc!0y092ln0@y&h!$f5iaj^fo3-f4rp_xb-@8'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-+6wqzq-o4bp_wzc!0y092ln0@y&h!$f5iaj^fo3-f4rp_xb-@8')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['KainguMike.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1,michaelkatana.pythonanywhere.com').split(',')
 
 # Security settings
 SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
