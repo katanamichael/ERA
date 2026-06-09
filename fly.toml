@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for era on 2026-06-09T07:03:42Z
+# fly.toml app configuration file generated for era--cgz0g on 2026-06-09T07:24:19Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'era'
-primary_region = 'cdg'
+app = 'era--cgz0g'
+primary_region = 'ams'
 
 [build]
   dockerfile = 'Dockerfile'
