@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["gunicorn", "emergencyresponse_pr.wsgi:application", "--bind", "0.0.0.0:8080"]
+CMD ["gunicorn", "--chdir", "/app/emergencyresponse_pr", "emergencyresponse_pr.wsgi:application", "--bind", "0.0.0.0:8080"]
